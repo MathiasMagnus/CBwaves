@@ -23,11 +23,16 @@ set_target_properties( ${PROJECT_NAME} PROPERTIES CXX_STANDARD 14
 
 if( BUILD_TESTS )
   add_executable( PDE_Test src/PDE_Test.cpp )
+  add_executable( PDE_Test2 src/PDE_Test2.cpp )
 
   target_include_directories( PDE_Test PRIVATE include )
+  target_include_directories( PDE_Test2 PRIVATE include )
 
   set_target_properties( PDE_Test PROPERTIES CXX_STANDARD 14
                                              CXX_STANDARD_REQUIRED ON )
+
+  set_target_properties( PDE_Test2 PROPERTIES CXX_STANDARD 14
+                                              CXX_STANDARD_REQUIRED ON )
                                              
   find_package( GnuPlot REQUIRED )
   
