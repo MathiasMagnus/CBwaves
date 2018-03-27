@@ -18,9 +18,8 @@ state c_Newtonian(dynamicalParams const& dp, initParams const& ip){
     mass const& r = dp.r;
     Vector<mass, 3> const& n = dp.n;
 
-    Vector<mass, 3> rN = -m/sq(r) * n;
-    return state{rN , dp.v};
-
+    Vector<mass, 3> aN = -m/sq(r) * n;
+    return state{aN, dp.v};
 }
 
 state c_PostNewtonian(dynamicalParams const& dp, initParams const& ip){

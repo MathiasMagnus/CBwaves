@@ -26,7 +26,7 @@ struct initParams{  //Constant parameters of the equations.
         ecc = ecc_;
 
         //Initial velocity
-        v_init = {0. , std::sqrt(m/r0*(1. - ecc)), 0.};
+        v_init = {0. , 1e-12/*std::sqrt(m/r0*(1. - ecc))*/, 0.};
 
         }
       

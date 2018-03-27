@@ -33,7 +33,7 @@ int main(){
     std::ofstream myfile;
     myfile.open("debug.dat");
 
-    initParams iparams(20., 2., 10., 0.);
+    initParams iparams(20., 2., 100., 0.);
     mass rmin = 6.*iparams.m;
     double printstep = 1000.;
     double T = 2.*PI*iparams.r0/(SI_c*std::sqrt((iparams.m1 + iparams.m2)/iparams.r0));
@@ -123,13 +123,14 @@ int main(){
     // (val * 1) type expressions to nop (no-operation).
 
     auto corrs = [&](dynamicalParams const& dp) -> state { // capture clause could be reference
-        return (use_c_Newtonian ? c_Newtonian(dp, iparams) : nullState) +              
-               (use_c_PostNewtonian ? c_PostNewtonian(dp, iparams) : nullState ) + 
+        //return c_Newtonian(dp, iparams);
+        return (use_c_Newtonian ? c_Newtonian(dp, iparams) : nullState) +
+               (use_c_PostNewtonian ? c_PostNewtonian(dp, iparams) : nullState ) +
                (use_c_2PostNewtonian ? c_2PostNewtonian(dp, iparams) : nullState ) +
                (use_c_3PostNewtonian ? c_3PostNewtonian(dp, iparams) : nullState ) +
                (use_c_4PostNewtonian ? c_4PostNewtonian(dp, iparams) : nullState ) +
                (use_c_SpinOrbit ? c_SpinOrbit(dp, iparams) : nullState ) +
-               (use_c_SpinSpin ? c_SpinSpin(dp, iparams) : nullState ) +
+               (use_c_SpinSpin ? c_SpinSpin(dp, iparams) : nullState ); +
                (use_c_BT_RR ? c_BT_RR(dp, iparams) : nullState ) +
                (use_c_PostNewtonianSO ? c_PostNewtonianSO(dp, iparams) : nullState ) +
                (use_c_2PostNewtonianSO ? c_2PostNewtonianSO(dp, iparams) : nullState ) +
