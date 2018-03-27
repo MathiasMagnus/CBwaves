@@ -194,7 +194,7 @@ int main(){
     // Set the equation for each 
     rk4.equation() = [=](state& result, const state& rhs){
 
-        dynamicalParams dp(rk4.lhs(), iparams);
+        dynamicalParams dp(rhs, iparams);
         auto temp = corrs(dp);
 
         result = PDE::make_equation( temp.get<Velocity>(), temp.get<Radius>() );
