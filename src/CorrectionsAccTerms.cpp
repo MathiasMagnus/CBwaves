@@ -731,7 +731,7 @@ Vector<mass, 3> spin1(dynamicalParams const& dp, initParams const& ip){
              + (1./16. + 1./18.*eta - 3./8.*sq(eta) + dm/m*(-1./16. + 1./2.*eta))*sqlength(v))
              + sq(m)/cb(r)*(-1./4. - 3./8.*eta + 1./2.*sq(eta) + dm/m*(1./4. - 1./8.*eta));
     
-    alpha2PN = m/sq(r)*((15./8.*eta - 195./32.*sq(eta) + 15./16.*cb(eta) + dm/m*(15./8.*eta - 75./32.*sq(eta)))*std::pow(length(n)*length(v), 4)
+    alpha3PN = m/sq(r)*((15./8.*eta - 195./32.*sq(eta) + 15./16.*cb(eta) + dm/m*(15./8.*eta - 75./32.*sq(eta)))*std::pow(length(n)*length(v), 4)
              + (-3.*eta + 291./32.*sq(eta) - 45./16.*cb(eta) + dm/m*(-3.*eta + 177./32.*sq(eta)))*sq(rdot)*sqlength(v)
              + (1./32. + 19./16.*eta - 31./8.*sq(eta) + 17./16.*cb(eta) + dm/m*(-1./32. + 3./4.*eta - 11./8.*sq(eta)))*std::pow(length(v),4))
              + sq(m)/cb(r)*((1./4. - 525./32.*eta - 159./16.*sq(eta) + 13./4.*cb(eta) + dm/m*(-1./4. - 75./32.*eta - 87./16.*sq(eta)))*sq(rdot)
@@ -765,7 +765,7 @@ Vector<mass, 3> spin2(dynamicalParams const& dp, initParams const& ip){
              + (1./16. + 1./18.*eta - 3./8.*sq(eta) - dm/m*(-1./16. + 1/2*eta))*sqlength(v))
              + sq(m)/cb(r)*(-1./4. - 3./8.*eta + 1./2.*sq(eta) - dm/m*(1./4. - 1./8.*eta));
     
-    alpha2PN = m/sq(r)*((15./8.*eta - 195./32.*sq(eta) + 15./16.*cb(eta) - dm/m*(15./8.*eta - 75./32.*sq(eta)))*std::pow(rdot, 4)
+    alpha3PN = m/sq(r)*((15./8.*eta - 195./32.*sq(eta) + 15./16.*cb(eta) - dm/m*(15./8.*eta - 75./32.*sq(eta)))*std::pow(rdot, 4)
              + (-3.*eta + 291./32.*sq(eta) - 45./16.*cb(eta) - dm/m*(-3.*eta + 177./32.*sq(eta)))*sq(rdot)*sqlength(v)
              + (1./32. + 19./16.*eta - 31./8.*sq(eta) + 17./16.*cb(eta) - dm/m*(-1./32. + 3./4.*eta - 11./8.*sq(eta)))*std::pow(length(v),4))
              + sq(m)/cb(r)*((1./4. - 525./32.*eta - 159./16.*sq(eta) + 13./4.*cb(eta) - dm/m*(-1./4. - 75./32.*eta - 87./16.*sq(eta)))*sq(rdot
